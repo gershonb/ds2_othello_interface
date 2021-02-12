@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Null List Exception",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestNullListE",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Empty List Exception",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestEmptyListE",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Null Value Exception",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestNullValE",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Empty Value Exception",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestEmptyValE",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Ignore Duplicates",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestIgnoreDuplicate",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Single Word",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestSingleWord",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "No Anagrams",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestNoAnagrams",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Two Words",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestTwoWords",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Ten Words Ordered",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestReturns",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Case Insensitive",
+      "setup": "",
+      "run": "gradle test --tests AnagramFinderTest.TestCaseInsensitive",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
