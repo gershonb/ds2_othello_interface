@@ -3,13 +3,63 @@
  */
 package AnagramFinderTemplate_Java;
 
+import org.checkerframework.checker.units.qual.A;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class AnagramFinder {
     public static void main(String[] args) {
-       //TODO
     }
 
-    public List<List<String>> findAllAnagrams(List<String> wordList) throws IllegalArgumentException{
-        //TODO
+
+    private int wordValueHashed(String word) {
+        word = word.toLowerCase().replaceAll("\\s", "");
+        int sum = 0;
+        for (int i = 0; i < word.length(); i++) {
+            int x = word.charAt(i);
+            sum += (int) Math.pow((double) x, 2);
+        }
+        return sum * (int) Math.pow(word.length(), 2);
     }
+
+    public List<List<String>> findAllAnagrams(List<String> wordList) throws IllegalArgumentException {
+        //TODO
+        //checks
+        if (wordList == null || wordList.isEmpty()) {
+            throw new IllegalArgumentException ("Param 'wordList' contains null or empty val");
+        }
+        ///////////////
+
+        HashMap<Integer, List<String>> results = new HashMap<Integer, List<String>>();
+        ArrayList<String> bucket = new ArrayList<String>();
+
+        for (String s : wordList) {
+            if (s == null || s.isEmpty()) {
+                throw new NullPointerException("Param 'wordList' contains null or empty val");
+            }
+            int hash = wordValueHashed(s);
+            if (results.containsKey(hash)) {
+                if (s.length() == results.get(hash).get(0).length()) {
+                    results.get(hash).add(s);
+                }
+            } else {
+                results.put(hash, new ArrayList<String>());
+                results.get(hash).add(s);
+            }
+        }
+        //remove 1
+        results.entrySet().removeIf(entry -> (entry.getValue().size() == 1));
+        //alphabetical
+        for (Map.Entry<Integer, List<String>> entry : results.entrySet()){
+            Collections.sort(entry.getValue());
+        }
+        ArrayList<List<String>> finalList = new ArrayList<List<String>> (results.values());
+        finalList.sort((l1, l2) -> l1.get(0).compareTo(l2.get(0)));
+
+        return finalList;
+    }
+
 
 }
